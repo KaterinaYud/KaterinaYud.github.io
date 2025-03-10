@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
+/*font-family: "Merriweather", serif;*/
+
+
+/*------------------Header--------------------*/
+
+header {
+    background-color: rgb(240, 155, 165);
+    padding: 0 0;
+    font-family: "Merriweather", serif;
+    margin-bottom: 30px;
+}
+
+.header__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: auto auto 1fr;
+    align-items: center;
+    gap: 15px;
+}
+
+.header__logo {
+    width: 170px;
+    height: 100px;
+}
+
+.header__world {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.header__world h2 {
+    font-size: 28px;
+    font-weight: 600;
+    margin: 0;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.divider {
+    color: black;
+    opacity: 0.7;
+}
+
+.home-link {
+    font-size: 16px;
+    text-decoration: none;
+    font-style: italic;
+    color: rgb(81, 7, 53);
+    transition: 0.3s;
+    font-weight: 500;
+    padding-top: 5px;
+}
+
+.home-link:hover {
+    color: white;
+}
+
+.header__world h4 {
+    font-size: 16px;
+    font-weight: 300;
+    opacity: 0.8;
+    margin: 0;
+    transition: 0.3s;
+}
+
+.header__world h2:hover,
+.header__world h4:hover {
+    color: rgb(255, 255, 255);
+}
+
+
+/*------------------Main--------------------*/
+
+body {
+    background-color: rgb(252, 244, 248);
+    font-family: "Merriweather", serif;
+    text-align: center;
+    font-size: 12px;
+}
+
+h1,h2{
+    color: #220616;
+    margin-top: 20px;
+}
+
+.categories {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.name__category{
+    color: #600d39;
+    font-style: italic;
+    font-size: 20px;
+}
+
+.category {
+    margin-bottom: 70px; 
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 50px;
+    width: 100%;
+    max-width: 830px; 
+    margin: 5px auto;
+}
+
+.card {
+    background-color: rgb(251, 239, 246);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: grid;
+    grid-template-rows: auto auto 1fr auto auto;
+    gap: 10px;
+    height: 100%;
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: 0.3s; 
+}
+
+.card:hover img {
+    transform: scale(1.1); 
+}
+
+.card p {
+    font-size: 12px;
+    color: #624e59;
+}
+
+.card .price {
+    font-size: 16px;
+    font-weight: bold;
+    color: #600d39;
+}
+
+.card .button {
+    font-family: "Merriweather", serif;
+    background: rgba(240, 155, 165, 0.853);
+    border: 2px solid pink;
+    cursor: pointer;
+    margin-top: 5px;
+    color: aliceblue;
+    font-size: 15px;
+    padding: 10px 30px;
+    border-radius: 17px;
+    transition: 0.3s;
+}
+
+.card .button:hover {
+    background-color: rgb(240, 212, 224);
+    color: rgb(241, 152, 164);
+    box-shadow: 0 4px 8px rgba(118, 30, 54, 0.492);
+}
+
+.card .button:active{
+    opacity: 0.7;
+}
+
+
+/*------------------Footer--------------------*/
+
+footer{
+    background-color: rgb(240, 155, 165);
+    color: rgb(67, 14, 47);
+    padding: 15px 15px;
+    font-family: "Merriweather", serif;
+    font-size: 14px;
+}
+
+.footer__copyright {
+    width: 100%;
+    grid-column: 1;
+    text-align: center;
+    font-size: 14px;
+    opacity: 0.8;
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 2px solid rgba(90, 20, 50, 0.3);
+}
+
+
+/*---------------Адаптивний дизайн------------------------*/
+
+@media (max-width: 1024px) {
+    .header__container {
+        grid-template-columns: auto 1fr;
+        gap: 10px;
+        padding-bottom: 10px;
+    }
+
+    .header__logo {
+        width: 150px;
+        height: 90px;
+    }
+
+    .container {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+
+    .card img {
+        height: 150px;
+    }
+
+    .card {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header__container {
+        display: grid;
+        place-items: center;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .header__world {
+        text-align: center;
+    }
+
+    .header__logo {
+        width: 130px;
+        height: 80px;
+    }
+
+    .header__world h2 {
+        font-size: 16px; 
+    }
+
+    .header__world h4 {
+        font-size: 10px; 
+    }
+
+    .divider h2 {
+        font-size: 16px; 
+    }
+
+    .home-link{
+        font-size: 12px;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .card img {
+        height: 150px;
+    }
+    
+    .card {
+        padding: 15px;
+    }
+}
