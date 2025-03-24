@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Відгук ✔ NovaFood</title>
+    <link rel="stylesheet" href="css/style_feedback.css">
+</head>
+<body>
+    <header>
+        <div class="header__container">
+            <img class="header__logo" src="img/logo.jpg" alt="Зображення не завантажено">
+            <div class="header__world">
+                <h2>Залишити відгук<span class="divider"><span><h2>✓</h2></span></span> <a href="index.html" class="home-link">на головну</a></h2>
+                <h4><i>Ваша думка важлива для нас – допоможіть нам стати ще кращими!</i> 🍽</h4>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <h1>Ваш відгук</h1>
+            <form id="feedbackForm">
+                <label for="name">Ім'я:</label>
+                <input type="text" id="name" name="name">
+
+                <label for="message">Ваш відгук:</label>
+                <textarea id="message" name="message" rows="5"></textarea>
+
+                <button type="submit">Надіслати</button>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <h3 class="footer__copyright">© NovaFood - Смак, що випереджає час! 2025</h3>
+    </footer>
+
+    <script>
+        document.getElementById("feedbackForm").addEventListener("submit", function(event) {
+            event.preventDefault(); 
+            let name = document.getElementById("name").value.trim();
+            let message = document.getElementById("message").value.trim();
+            if (name === "" || message === "") {
+                alert("Будь ласка, заповніть всі поля.");
+                return;
+            }
+            let tempReviews = JSON.parse(sessionStorage.getItem("tempReviews")) || [];
+            tempReviews.push({ name, text: message });
+            sessionStorage.setItem("tempReviews", JSON.stringify(tempReviews));
+            document.getElementById("feedbackForm").reset();
+            alert("Ваш відгук додано!");
+        });
+    </script>
+    
+</body>
+</html>
